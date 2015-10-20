@@ -1,0 +1,60 @@
+#######################################
+# Syntax Coloring Map For RoDI
+#######################################
+# Class
+#######################################
+
+RoDi            KEYWORD1
+RoDIBuzzer      KEYWORD1
+RoDILeds        KEYWORD1
+RoDILineSensor  KEYWORD1
+RoDIMotors      KEYWORD1
+RoDISonars      KEYWORD1
+
+#######################################
+# Methods and Functions
+#######################################
+
+read            KEYWORD2
+read_cm         KEYWORD2
+begin           KEYWORD2
+clear           KEYWORD2
+toggle          KEYWORD2
+write           KEYWORD2
+rainbow         KEYWORD2
+drive           KEYWORD2
+pivot           KEYWORD2
+rightMotor      KEYWORD2
+leftMotor       KEYWORD2
+stop            KEYWORD2
+read            KEYWORD2
+check           KEYWORD2
+setBGLevel      KEYWORD2
+setDetectLevel  KEYWORD2
+calStatus       KEYWORD2
+play_tone       KEYWORD2
+play_melody     KEYWORD2
+
+#######################################
+# Constants
+#######################################
+
+LEFT_SERVO          LITERAL1
+RIGHT_SERVO         LITERAL1
+LEFT_HALL           LITERAL1
+RIGHT_HALL          LITERAL1
+LEFT_US_TRIGGER     LITERAL1
+LEFT_US_ECHO        LITERAL1
+CENTER_US_TRIGGER   LITERAL1
+CENTER_US_ECHO      LITERAL1
+RIGHT_US_TRIGGER    LITERAL1
+RIGHT_US_ECHO       LITERAL1
+BUZZER              LITERAL1
+USER_LED            LITERAL1
+WS2812b_LED         LITERAL1
+IMU_SDA             LITERAL1
+IMU_SCL             LITERAL1
+BATTERY_MON         LITERAL1
+LDR                 LITERAL1
+LEFT_LINE           LITERAL1
+RIGHT_LINE          LITERAL1
