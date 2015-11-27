@@ -17,7 +17,8 @@
 #include <Arduino.h>
 #include "RoDI.h"
 
-RoDIMotors::RoDIMotors()
+RoDIMotors::RoDIMotors(HardwareSerial& serial):
+    _HardSerial(serial)
 {
 }
 
@@ -44,6 +45,8 @@ void RoDIMotors::rightMotor(char speed)
       _right_servo_attached = true;
     }
     int tmp = map(speed, 100, -100, 0, 180);
+    _HardSerial.print("left Servo=");
+    _HardSerial.println(tmp);
     _rightServo.write(constrain(tmp, 0, 180));
   }
 }
@@ -59,6 +62,8 @@ void RoDIMotors::leftMotor(char speed)
       _left_servo_attached = true;
     }
     int tmp = map(speed, -100, 100, 0, 180);
+    _HardSerial.print("right Servo=");
+    _HardSerial.println(tmp);
     _leftServo.write(constrain(tmp, 0, 180));
   }
 }

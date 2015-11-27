@@ -98,7 +98,7 @@ class RoDILeds
 class RoDIMotors
 {
   public:
-    RoDIMotors();
+    RoDIMotors(HardwareSerial& serial);
     void drive(char speed);      // Drive in direction given by sign, at speed given
                                  // by magnitude of the parameter.
     void pivot(char speed);      // Pivot more or less in place. Turns motors in
@@ -110,6 +110,7 @@ class RoDIMotors
     Servo _rightServo;
     bool _left_servo_attached;
     bool _right_servo_attached;
+    HardwareSerial& _HardSerial;
 };
 
 class RoDILineSensor
@@ -128,7 +129,7 @@ class RoDILineSensor
     int _detectLevel;
 };
 
-class RoDIBuzzer
+/*class RoDIBuzzer
 {
   public:
     RoDIBuzzer();
@@ -136,5 +137,6 @@ class RoDIBuzzer
     void play_tone(unsigned int frequency, unsigned long duration);
     void play_melody(int melody);
 };
+*/
 
 #endif

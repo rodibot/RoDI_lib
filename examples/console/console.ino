@@ -1,12 +1,9 @@
 #include <RoDI.h>
-#include <NewPing.h>
-#include <Adafruit_NeoPixel.h>
-#include <Servo.h>
 
 RoDILeds leds;
-RoDIMotors motors;
+RoDIMotors motors(Serial);
 RoDISonars sonars;
-RoDIBuzzer buzzer;
+//RoDIBuzzer buzzer;
 RoDILineSensor left_sensor(LEFT_LINE);
 RoDILineSensor right_sensor(RIGHT_LINE);
 
@@ -46,22 +43,30 @@ void loop() {
       case 'f':
         clear_terminal();
         Serial.println("Robot forward");
-        motors.drive(50);
+        motors.drive(100);
+        delay(1000);
+        motors.stop();
         break;
       case 'b':
         clear_terminal();
         Serial.println("Robot backward");
-        motors.drive(-50);
+        motors.drive(-100);
+        delay(1000);
+        motors.stop();
         break;
       case 'l':
         clear_terminal();
         Serial.println("Robot pivot left");
-        motors.pivot(50);
+        motors.pivot(100);
+        delay(1000);
+        motors.stop();
         break;
       case 'r':
         clear_terminal();
         Serial.println("Robot pivot right");
-        motors.pivot(-50);
+        motors.pivot(-100);
+        delay(1000);
+        motors.stop();
         break;
       case 's':
         clear_terminal();
@@ -78,7 +83,7 @@ void loop() {
         Serial.println("]");
         break;
       case 'p':
-        buzzer.play_melody(0);
+        //buzzer.play_melody(0);
         print_menu();
         break;
       case 'x':
